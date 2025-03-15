@@ -1,61 +1,127 @@
-/* عمومی */
-* {
+/* Global Styles */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #eef2f7;
+  color: #2e3a59;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
   padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dde3eb;
 }
 
-/* هدر صفحه */
-h1, h2, h3 {
-  color: #333;
+/* Headings */
+h1, h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-/* استایل لیست محصولات */
+/* List Styles */
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9fafc;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #dde3eb;
+  transition: box-shadow 0.2s ease;
 }
 
 li:hover {
-  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* استایل دکمه */
+/* Buttons */
 button {
-  background-color: #007BFF;
-  color: white;
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 50px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
 
-/* استایل سبد خرید */
-#cart {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  margin: 10px 0;
+  border: 1px solid #dde3eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Messages */
+p {
+  text-align: center;
+  font-size: 14px;
+  color: #27ae60;
+  margin-top: 10px;
+}
+
+p.error {
+  color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }
