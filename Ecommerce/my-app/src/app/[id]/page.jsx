@@ -1,6 +1,24 @@
 import { env } from "@/env/env.mjs";
 import Link from "next/link";
 
+
+export async function generateMetadata({params}){
+
+  const {id} = params;
+  const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/${id}`)
+  const product = await response.json()
+
+
+  return {
+      title: product.title,
+      description: product.description,
+      openGraph: {
+          title: product.title ,
+          description: product.description ,
+      }
+  }
+}
+
 export default async function ProductDetail({params}) {
 
   const {id} = params;

@@ -34,8 +34,18 @@ export default function CartProvider({children}) {
     );
   }
 
+  function getTotal(){
+    let total = 0
+    cart.forEach(item =>
+      total += item.quantity * item.price
+    )
+    return total
+  }
+
+
+
   return (
-    <CartContext.Provider value={{cart, addToCart, removeFromCart , updateQuantity}}>
+    <CartContext.Provider value={{cart, addToCart, removeFromCart , updateQuantity , getTotal}}>
       {children}
     </CartContext.Provider>
   );
